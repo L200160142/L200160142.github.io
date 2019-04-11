@@ -1,51 +1,49 @@
 <html>
+  <head>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  </head>
   <body>
-  <h1> Tugas Biometrik Finger Print</h1>
-  <p> Gambar foto asli </br>
-    <img src = "foto.jpg">
-  </p>
-<h3> Percobaan dengan mengurangi brightness/kecerahan</h3>
-<p><b>percobaan 1</b></br>menggunakan foto dengan brightness seperti foto berikut</br>
-      <img src = "foto2.jpg"></br>
-       hasil</br>
-         <img src = "foto2-1.jpg"></br>
-         Wajah dan mata masih terdeteksi
-      </p>
-<p><b> percobaan 2 </b></br>menggunakan foto dengan brightness seperti foto berikut</br>
-      </br><img src = "foto3.jpg"></br>
-      hasil</br>
-      <img src = "foto3-1.jpg"></br>
-       Hanya wajah yang bisa terdeteksi sedangkan mata tidak
-</p>
-<p>
-  <b>percobaan 3</b></br>menggunakan foto dengan brightness seperti foto berikut</br>
- <img src = "foto2.png"></br>
-hasil</br></br>
-         <img src = "foto4.png"></br>
-         Wajah dan mata sudah tidak terdeteksi
-      </p>
-<p style="border-style: dashed"><b> Kode Program</b></br>
-import cv2</br>
-import numpy as np </br>
-face_cascade = cv2.CascadeClassifier('haarcascade_frontalface_default.xml')</br>
-eye_cascade = cv2.CascadeClassifier('haarcascade_eye.xml')</br>
+    <div class = "jumbotron bg-danger">
+      <h1>Laporan Tugas Biometrik dan Praktikum Sistem Embedded</h1>
+      <h3> Rizki Amalia Rohmah</h3>
+      <h3>L200160142</h3>
+    
+    </div>
+<div class = "row">
+  <div class = "col-6">
+    <div class="card">
+        <div class="card-header">Biometric</div>
+        <div class="card-body"><a href = "biometric.html">Tugas biometric</a> </div> 
+        <div class="card-footer">Informatika</div>
+    </div>
+  </div>
+  <div class = "col-6">
+  <div class="card">
+       <div class="card-header">Biometric</div>
+    <div class="card-body"><a href = "modul1.html">modul 1</a> 
+      <a href = "modul2.html">modul 2</a> </br>
+    <a href = "modul3.html">modul 3</a> <a href = "modul4.html">modul 4</a> 
+    </br>
+    <a href = "modul5.html">modul 5</a> 
+    
+      </div> 
+      <div class="card-footer">Informatika</div>
+  </div>
+  </div>
+</div>
+ 
 
-img = cv2.imread('test5.jpg')</br>
-gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)</br>
-faces = face_cascade.detectMultiScale(gray, 1.3,8)</br>
-for (x,y,w,h) in faces:</br>
-    &nbsp; &nbsp; img = cv2.rectangle(img,(x,y),(x+w,y+h),(255,0,0),2)</br>
-     &nbsp; &nbsp;roi_gray = gray[y:y+h, x:x+w]</br>
-     &nbsp; &nbsp;roi_color = img[y:y+h, x:x+w]</br>
-     &nbsp; &nbsp;eyes = eye_cascade.detectMultiScale(roi_gray)</br>
-     &nbsp; &nbsp;for (ex,ey,ew,eh) in eyes:</br>
-      &nbsp; &nbsp; &nbsp; &nbsp;cv2.rectangle(roi_color,(ex,ey),(ex+ew,ey+eh),(0,255,0),2)</br>
 
-cv2.imshow('img',img)</br>
-cv2.waitKey(0)</br>
-
-cv2.destroyAllWindows()</br>
-</p>
 
 </body>
   
